@@ -67,9 +67,14 @@ function FloodFill() {
 			<div className='navbar'>
 				<ul>
 					<li><a className='heading' href="#home">Flood FIll Algorithm</a></li>
+					<li style={{ float: 'right' }}>
+						<a style={{ padding: '5px' }} href="https://github.com/jindal2209/FloodFill_Visualizer" target='_blank' rel='noreferrer' >
+							<img style={{ width: '70px' }} src={process.env.PUBLIC_URL + "/iff.png"} alt='myGithub' />
+						</a>
+					</li>
 				</ul>
 			</div>
-			<div style={{ marginTop: '15px' }}>
+			<div style={{ marginTop: '10px' }}>
 				<div className='grid-container'>
 					<div className='left'>
 						<label>
