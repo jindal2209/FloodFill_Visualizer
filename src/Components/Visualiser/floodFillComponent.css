@@ -1,0 +1,33 @@
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	box-shadow: 0 3px 3px 0 rgba(81, 81, 81, 0.7), 0 3px 3px 0 rgba(81, 81, 81, 0.7);
+	background-color: rgb(29, 29, 29);
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.heading {
+	text-decoration: underline;
+	font-weight: bolder;
+	font-size: 25px;
+}
+
+.box {
+	position: fixed;
+	bottom: 10px;
+	margin: auto;
+	width: 100%;
+}
