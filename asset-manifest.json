@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/FloodFill_Visualizer/static/css/main.12bb74db.chunk.css",
-    "main.js": "/FloodFill_Visualizer/static/js/main.04e70055.chunk.js",
-    "main.js.map": "/FloodFill_Visualizer/static/js/main.04e70055.chunk.js.map",
+    "main.css": "/FloodFill_Visualizer/static/css/main.51b240af.chunk.css",
+    "main.js": "/FloodFill_Visualizer/static/js/main.7e1c0b49.chunk.js",
+    "main.js.map": "/FloodFill_Visualizer/static/js/main.7e1c0b49.chunk.js.map",
     "runtime-main.js": "/FloodFill_Visualizer/static/js/runtime-main.134eb08e.js",
     "runtime-main.js.map": "/FloodFill_Visualizer/static/js/runtime-main.134eb08e.js.map",
     "static/js/2.bacd0a72.chunk.js": "/FloodFill_Visualizer/static/js/2.bacd0a72.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.3d45f5e8.chunk.js": "/FloodFill_Visualizer/static/js/3.3d45f5e8.chunk.js",
     "static/js/3.3d45f5e8.chunk.js.map": "/FloodFill_Visualizer/static/js/3.3d45f5e8.chunk.js.map",
     "index.html": "/FloodFill_Visualizer/index.html",
-    "static/css/main.12bb74db.chunk.css.map": "/FloodFill_Visualizer/static/css/main.12bb74db.chunk.css.map",
+    "static/css/main.51b240af.chunk.css.map": "/FloodFill_Visualizer/static/css/main.51b240af.chunk.css.map",
     "static/js/2.bacd0a72.chunk.js.LICENSE.txt": "/FloodFill_Visualizer/static/js/2.bacd0a72.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.134eb08e.js",
     "static/js/2.bacd0a72.chunk.js",
-    "static/css/main.12bb74db.chunk.css",
-    "static/js/main.04e70055.chunk.js"
+    "static/css/main.51b240af.chunk.css",
+    "static/js/main.7e1c0b49.chunk.js"
   ]
 }
