@@ -1,11 +1,16 @@
 import { delay, MakeDelay } from "../Utils/utils";
 
-var row = 23;
-var col = 60;
+export var row = 23;
+export var col = 60;
 var fillColor = 'pink';
 var n;
 var dx = [0, 1, -1, 0];
 var dy = [1, 0, 0, -1]
+
+export function setRC(r, c) {
+	row = r;
+	col = c;
+}
 
 function hexToRgb(hex) {
 	// copied from stack overflow
@@ -56,6 +61,7 @@ export async function floodFill(cx, cy) {
 	var grid = document.querySelectorAll('.element-block');
 	fillColor = document.getElementById('colorBox').value;
 	fillColor = hexToRgb(fillColor);
+	console.log(row, col);
 	n = grid.length;
 	await helper(grid, cx, cy);
 }

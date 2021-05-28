@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { floodFill } from "../Algorithm/floodFill";
+import { col, floodFill, setRC } from "../Algorithm/floodFill";
 import './floodFillComponent.css'
 
 function FloodFill() {
@@ -9,9 +9,17 @@ function FloodFill() {
 
 	useEffect(() => {
 		var ar = []
-		for (var i = 0; i < 23; i++) {
+		var w = window.innerWidth - 30
+		w = parseInt(w / 25)
+
+		var h = window.innerHeight - document.getElementById('navbar').offsetHeight - 30
+		h = parseInt(h / 25)
+
+		setRC(h, w);
+
+		for (var i = 0; i < h; i++) {
 			var sr = []
-			for (var j = 0; j < 60; j++) {
+			for (var j = 0; j < w; j++) {
 				sr.push('element-block');
 			}
 			ar.push(sr)
@@ -30,9 +38,9 @@ function FloodFill() {
 			var grid = document.querySelectorAll('.element-block');
 			for (var i = 0; i < grid.length; i++) {
 				if (grid[i].style.backgroundColor === 'rgb(247, 247, 207)') {
-					var row = parseInt(i / 60);
-					var col = i - row * 60
-					floodFill(row, col);
+					var ro = parseInt(i / col);
+					var co = i - ro * col
+					floodFill(ro, co);
 					break;
 				}
 			}
@@ -64,7 +72,7 @@ function FloodFill() {
 
 	return (
 		<div>
-			<div className='navbar'>
+			<div id='navbar'>
 				<ul>
 					<li><a className='heading' href="#home">Flood FIll Algorithm</a></li>
 					<li style={{ float: 'right' }}>
@@ -73,8 +81,6 @@ function FloodFill() {
 						</a>
 					</li>
 				</ul>
-			</div>
-			<div style={{ marginTop: '10px' }}>
 				<div className='grid-container'>
 					<div className='left'>
 						<label>
@@ -93,30 +99,30 @@ function FloodFill() {
 						Draw: Click on any box to start drawing. Click again to stop drawing.<br />Fill : Select the colour and click on area to color
 					</div>
 				</div>
-				<div>
-					<div className='box'>
-						{arr.map((row, ridx) => (
-							<div className={ridx} key={ridx} >
-								{row.map((col, cidx) => (
-									<div
-										className={`${col}`}
-										key={cidx}
-										style={{
-											backgroundColor: 'white',
-											height: '25px',
-											width: '25px',
-											outline: '1px solid rgb(175, 216, 248)',
-											display: 'inline-block',
-											transition: '0.6s',
-											transitionTimingFunction: 'ease-in'
-										}}
-										onMouseEnter={(e) => handleMouseEnter(e)}
-										onMouseDown={(e) => handleCoordinates(e)}
-									/>
-								))}
-							</div>
-						))}
-					</div>
+			</div>
+			<div>
+				<div className='box'>
+					{arr.map((row, ridx) => (
+						<div className={ridx} key={ridx} >
+							{row.map((col, cidx) => (
+								<div
+									className={`${col}`}
+									key={cidx}
+									style={{
+										backgroundColor: 'white',
+										height: '25px',
+										width: '25px',
+										outline: '1px solid rgb(175, 216, 248)',
+										display: 'inline-block',
+										transition: '0.6s',
+										transitionTimingFunction: 'ease-in'
+									}}
+									onMouseEnter={(e) => handleMouseEnter(e)}
+									onMouseDown={(e) => handleCoordinates(e)}
+								/>
+							))}
+						</div>
+					))}
 				</div>
 			</div>
 		</div>

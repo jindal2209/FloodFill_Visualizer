@@ -61,14 +61,15 @@ input:checked + .slider {
 .grid-container{
 	display: grid;
 	grid-template-areas:
-		'left left left left right right'
-		'left left left left right right'
-		'left left left left right right';
+		'left left left right right right'
+		'left left left right right right'
+		'left left left right right right';
 	grid-gap: 10px;
 	padding: 10px;
 }
 
 .right {
+	font-size: small;
 	grid-area: right;
 	text-align: center
 }
