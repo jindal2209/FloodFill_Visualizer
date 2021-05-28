@@ -108,7 +108,7 @@ function FloodFill() {
 											outline: '1px solid rgb(175, 216, 248)',
 											display: 'inline-block',
 											transition: '0.6s',
-											transitionTimingFunction: ''
+											transitionTimingFunction: 'ease-in'
 										}}
 										onMouseEnter={(e) => handleMouseEnter(e)}
 										onMouseDown={(e) => handleCoordinates(e)}
@@ -118,8 +118,8 @@ function FloodFill() {
 						))}
 					</div>
 				</div>
-			</div >
-		</div >
+			</div>
+		</div>
 	)
 }
 

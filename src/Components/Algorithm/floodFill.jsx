@@ -8,6 +8,8 @@ var dx = [0, 1, -1, 0];
 var dy = [1, 0, 0, -1]
 
 function hexToRgb(hex) {
+	// copied from stack overflow
+	// https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
 	// Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
 	var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
 	hex = hex.replace(shorthandRegex, function (m, r, g, b) {
