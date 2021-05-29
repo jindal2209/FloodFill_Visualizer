@@ -1,6 +1,7 @@
 # Flood Fill Algorithm Visualizer
 Project Hosted at https://jindal2209.github.io/FloodFill_Visualizer. \
-Visualisation of Flood Fill Algorithm used in paint and drawing tools using depth first search.
+Visualisation of Flood Fill Algorithm used in paint and drawing tools.
+Both Depth First Search and Breadth First Search is implemented.
 
 Hosted on github via gh-pages
 
