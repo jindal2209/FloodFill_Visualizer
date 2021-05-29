@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
-import { col, floodFill, setRC } from "../Algorithm/floodFill";
 import './floodFillComponent.css'
+import { col, setRC } from "../Utils/utils";
+
+// allgos
+import { floodFillBFS } from '../Algorithm/floodFillBFS'
+import { floodFill } from "../Algorithm/floodFill";
+
+
 
 function FloodFill() {
 	var [color, setColor] = useState('#ff0000')
 	var [arr, setArr] = useState([]);
 	var [draw, setDraw] = useState(false)
+	var [dfs, setDFS] = useState(true)
 
 	useEffect(() => {
 		var ar = []
@@ -40,7 +47,12 @@ function FloodFill() {
 				if (grid[i].style.backgroundColor === 'rgb(247, 247, 207)') {
 					var ro = parseInt(i / col);
 					var co = i - ro * col
-					floodFill(ro, co);
+					if (dfs) {
+						floodFill(ro, co);
+					}
+					else {
+						floodFillBFS(ro, co)
+					}
 					break;
 				}
 			}
@@ -89,9 +101,24 @@ function FloodFill() {
 						&nbsp;
 						&nbsp;
 						&nbsp;
-						<label className='switch' >
-							<input id='toggler' type='checkbox' onClick={(e) => handleChange(e)} />
-							<span className='slider' />
+						<label className="switch">
+							<input id='toggler' type="checkbox" onClick={(e) => handleChange(e)} />
+							<a href='#home'> </a>
+							<span>
+								<span className="left-span">Fill</span>
+								<span className="right-span">Draw</span>
+							</span>
+						</label>
+						&nbsp;
+						&nbsp;
+						&nbsp;<br />
+						<label className="switch">
+							<input id='toggler' type="checkbox" onClick={() => setDFS(prev => !prev)} />
+							<a href='#home'> </a>
+							<span>
+								<span className="left-span">DFS</span>
+								<span className="right-span">BFS</span>
+							</span>
 						</label>
 					</div>
 					<div className='right'>

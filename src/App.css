@@ -5,73 +5,25 @@ body {
 	text-align: center;
 }
 
-/* Slider */
-.switch {
-	position: relative;
-	display: inline-block;
-	width: 100px;
-	height: 30px;
-}
-
-.switch input {
-	opacity: 0;
-	width: 0;
-	height: 0;
-}
-
-.slider {
-	text-align: center;
-	border: 1px solid #4CAF50;
-	border-radius: 15px;
-	position: absolute;
-	cursor: pointer;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: #4CAF50;
-	font-size: 15px;
-}
-
-.slider::before {
-	position: absolute;
-	color: black;
-	content: "Fill";
-	border-radius: 15px;
-	border: 1px solid white;
-	height: 20px;
-	width: 40px;
-	left: 4px;
-	bottom: 4px;
-	background-color: white;
-	transition: 0.4s;
-}
-
-input:checked + .slider::before {
-	transform: translateX(48px);
-	content: "Draw";
-}
-
-input:checked + .slider {
-	border-radius: 15px;
-	border: 1px solid #2196f3;
-	background-color: #2196f3;
-}
 
 .grid-container{
 	display: grid;
 	grid-template-areas:
-		'left left left right right right'
-		'left left left right right right'
-		'left left left right right right';
+	'left left left right right right'
+	'left left left right right right'
+	'left left left right right right';
 	grid-gap: 10px;
 	padding: 10px;
 }
 
 .right {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	font-size: small;
 	grid-area: right;
-	text-align: center
+	text-align: center;
+	vertical-align: bottom;
 }
 
 .left {
@@ -81,4 +33,148 @@ input:checked + .slider {
 	justify-content: right;
 	align-items: center;
 	grid-area: left;
+	flex-direction: row;
 }
+
+@media (max-width: 800px) {
+	.left {
+	  flex-direction: column;
+	}
+  }
+
+
+/*  Toggle Switch  */
+/* Slider */
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.switch span span {
+	display: none;
+}  
+  
+.switch {
+	position: relative;
+	display: inline-block;
+	overflow: visible;
+	padding: 0;
+	height:30px;
+	cursor: pointer;
+	width: 120px;
+	background-color: #fafafa;
+	border: 1px solid #ccc;
+	border-radius:5px;
+}
+.switch * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.switch label,
+.switch > span {
+	line-height: 20px;
+	height: 20px;
+	vertical-align: middle;
+}
+.switch input:focus ~ a,
+.switch input:focus + label {
+	outline: none;
+}
+.switch label {
+	position: relative;
+	z-index: 3;
+	display: block;
+	width: 100%;
+}
+.switch input {
+	position: absolute;
+	opacity: 0;
+	z-index: 5;
+}
+.switch > span {
+	position: absolute;
+	left: 0;
+	width: calc(100% - 6px);
+	margin: 0;
+	text-align: left;
+	white-space: nowrap;
+  	margin:0 3px;
+}
+.switch > span span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	display: block;
+	width: 50%;
+	margin-left: 50px;
+	text-align: left;
+	font-size: 0.9em;
+	width: auto;
+	left: 0;
+	top: -1px;
+	opacity: 1;
+	width:40%;
+	text-align: center;
+  	line-height:34px;
+}
+.switch a {
+	position: absolute;
+	right: 50%;
+	z-index: 4;
+	display: block;
+	top: 3px;
+	bottom: 3px;
+	padding: 0;
+	left: 3px;
+	width: 50%;
+	background-color: #666;
+	border-radius: 4px;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.switch > span span:first-of-type {
+	color: #FFF;
+	opacity: 1;
+	left: 0;
+	margin: 0;
+    width: 50%;
+}
+.switch > span span:last-of-type {
+	left:auto;
+	right:0;
+	color: #999;
+	margin: 0;
+    width: 50%;
+}
+.switch > span:before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: -2px;
+	border-radius: 30px;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+.switch input:checked ~ a {
+	left: calc(50% - 3px);
+}
+
+.switch input:checked ~ span span:first-of-type {
+	left:0;
+	color:#999;
+}
+.switch input:checked ~ span span:last-of-type {
+	color:#FFF;
+}
+
+  /*  End Toggle Switch  */
